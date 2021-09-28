@@ -1,0 +1,7 @@
+Steps to add Lombok 
+1. convert project to maven ( right click on the project<<configure<<convert to maven project)
+2. open pom.xml and add depedency for lombok
+Note : pom=Project Object Model
+3. copy Qualified name of lombok jar and go to the location on maven local repository where lombok.jar is stored.
+4. Run lombok.jar by double clicking on it and select eclipse.exe and then click on install/update.
+5. Quit Intaller.
