@@ -50,6 +50,9 @@ public class MyFirstDemoClass {
 		catch(Exception exception) {
 			System.out.println("SomeThing went wrong , please try after sometime!");
 		}
+		finally {
+			System.out.println("Hi I am Finally Block!");
+		}
 		System.out.println("Good Bye from main, Have a Nice Day!");
 
 	}
