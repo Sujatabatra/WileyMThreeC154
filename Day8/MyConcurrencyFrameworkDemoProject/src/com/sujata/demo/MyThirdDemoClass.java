@@ -1,13 +1,14 @@
 package com.sujata.demo;
 
 import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-class MyThreadJob implements Runnable{
+class MyThreadOneMoreJob implements Runnable{
 
 	private int counter;
 	
-	public MyThreadJob(int counter) {
+	public MyThreadOneMoreJob(int counter) {
 		super();
 		this.counter = counter;
 	}
@@ -25,19 +26,28 @@ class MyThreadJob implements Runnable{
 	}
 	
 }
-public class MySecondDemoClass {
+public class MyThirdDemoClass {
 
 	public static void main(String[] args) {
 		
 		/*
 		 * Factory Design Pattern
 		 */
-		Executor threadPool=Executors.newFixedThreadPool(4);
+		ExecutorService threadPool=Executors.newFixedThreadPool(4);
 		
 		
 		for(int jobId=1;jobId<=10;jobId++) {
 			threadPool.execute(new MyThreadJob(jobId));
 		}
+		threadPool.execute(new MyThreadOneMoreJob(111));
+		threadPool.execute(new MyThreadOneMoreJob(222));
+		threadPool.execute(new MyThreadOneMoreJob(333));
+		
+		System.out.println("At line 46");
+		
+		threadPool.shutdown(); //what all jobs we already have assigned to the pool finish with those jobs but don't accept new jobs
+		
+		threadPool.execute(new MyThreadOneMoreJob(999));
 		
 	}
 
