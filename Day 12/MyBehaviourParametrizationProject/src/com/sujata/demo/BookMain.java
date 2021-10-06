@@ -21,6 +21,16 @@ public class BookMain {
 		System.out.println("List of Books written by Author X");
 		System.out.println(bookLibrary.searchBook(new ThickBookPredicate()));
 		
+		
+		System.out.println("Expensive books:"+bookLibrary.searchBook(new BookPredicate() {
+			
+			@Override
+			public boolean test(Book book) {
+				
+				return book.getPrice()>1500;
+			}
+		}));
+		
 	}
 
 }
