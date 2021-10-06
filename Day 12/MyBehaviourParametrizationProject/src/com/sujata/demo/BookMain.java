@@ -30,7 +30,7 @@ public class BookMain {
 			}
 		}));
 
-		System.out.println("Expensive books:" + bookLibrary.searchBook(book-> book.getPrice()>1500));
+		System.out.println("Expensive books:" + bookLibrary.searchBook1(book-> book.getPrice()>1500));
 			
 	
 	}

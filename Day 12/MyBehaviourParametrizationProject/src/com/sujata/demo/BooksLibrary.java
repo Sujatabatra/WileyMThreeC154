@@ -1,6 +1,7 @@
 package com.sujata.demo;
 
 import java.util.ArrayList;
+import java.util.function.Predicate;
 
 import com.sujata.bean.Book;
 
@@ -40,6 +41,16 @@ public class BooksLibrary {
 	}
 	
 	public ArrayList<Book> searchBook(BookPredicate bookPredicate){
+		ArrayList<Book> bookList=new ArrayList<>();
+		for(Book book:books) {
+			if(bookPredicate.test(book)) {
+				bookList.add(book);
+			}
+		}
+		return bookList;
+	}
+	
+	public ArrayList<Book> searchBook1(Predicate<Book> bookPredicate){
 		ArrayList<Book> bookList=new ArrayList<>();
 		for(Book book:books) {
 			if(bookPredicate.test(book)) {

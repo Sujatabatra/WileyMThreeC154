@@ -1,5 +1,7 @@
 package com.sujata.demo;
 
+import java.util.function.Consumer;
+
 @FunctionalInterface
 interface Greet{
 	public void wish(String name);
@@ -32,6 +34,9 @@ public class MySecondClass {
 		Greet greet=name->System.out.println("Welcome "+name);
 		
 		greet.wish("Sujata");
+		
+		Consumer<String> greet1=name->System.out.println("Good Morning "+name);
+		greet1.accept("Sujata");
 	}
 
 }
