@@ -9,7 +9,8 @@ public class BinarySerachTreePresentation {
 	public void showMenu() {
 		System.out.println("1. Add Element");
 		System.out.println("2. Inorder Traversal");
-		System.out.println("3. Exit");
+		System.out.println("3. Delete Element");
+		System.out.println("4. Exit");
 	}
 	
 	public void performMenu(int choice) {
@@ -25,6 +26,11 @@ public class BinarySerachTreePresentation {
 			binarySearchTree.inorderTraversal();
 			break;
 		case 3:
+			System.out.println("Enter Element you want to Delete : ");
+			int ele=scanner.nextInt();
+			binarySearchTree.deleteElement(ele);
+			break;
+		case 4:
 			System.out.println("Thanks for using out system!");
 			System.exit(0);
 		default:
