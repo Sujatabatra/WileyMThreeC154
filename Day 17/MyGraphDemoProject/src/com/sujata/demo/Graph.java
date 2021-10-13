@@ -22,6 +22,21 @@ public class Graph {
 		if(bidirectional==true)
 			map.get(destination).add(source);
 	}
+	
+	public int countNoOfEdges()
+	{
+		Map<String, Boolean> m = new HashMap<>();
+		for(String vertex : map.keySet())
+		{
+			for(String w : map.get(vertex))
+				if(!m.containsKey(w + vertex) && !m.containsKey(vertex + w))
+					m.put(vertex + w, true);
+		}
+			
+		return m.keySet().size();
+		
+	}
+
 
 	@Override
 	public String toString() {
