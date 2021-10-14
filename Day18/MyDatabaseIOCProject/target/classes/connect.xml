@@ -15,4 +15,8 @@
 		<property name="username" value="root"></property>
 		<property name="password" value="sujata"></property>
 	</bean>
+	
+	<bean id="empDao" class="com.sujata.producer.EmployeeDao">
+		<constructor-arg name="connection" ref="OracleConnection"></constructor-arg>
+	</bean>
 </beans>
