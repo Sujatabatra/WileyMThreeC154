@@ -8,5 +8,5 @@
 
 	<context:annotation-config></context:annotation-config>
 	<!-- check the package com.sujata.producer and what all classes are annotated with @Component run their life cycle -->
-	<context:component-scan base-package="com.sujata.producer"></context:component-scan>
+	<context:component-scan base-package="com.sujata.producer,com.sujata.training"></context:component-scan>
 </beans>
