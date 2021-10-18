@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="Shalini" class="com.sujata.producer.Singer">
+		<constructor-arg name="song" value="Gadi Wala Aya"></constructor-arg>
+	</bean>
+
+
+	<bean id="Waqar" class="com.sujata.producer.Juggler">
+		<property name="balls" value="20"></property>
+	</bean>
+
+	<bean id="Chetan" class="com.sujata.producer.Dancer">
+		<constructor-arg name="style" value="Tandav"></constructor-arg>
+	</bean>
+
+	<bean id="guitar" class="com.sujata.producer.Guitar"></bean>
+	<bean id="Tabla" class="com.sujata.producer.Tabla"></bean>
+	<bean id="Drum" class="com.sujata.producer.Drum"></bean>
+	
+	<bean id="Shafi" class="com.sujata.producer.Instrumentalist">
+		<property name="instrument" ref="guitar"></property>
+	</bean>
+</beans>
