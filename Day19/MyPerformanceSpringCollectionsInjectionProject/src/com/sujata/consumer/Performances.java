@@ -13,7 +13,7 @@ public class Performances {
 //		Performer performer1=(Performer)springContainer.getBean("Waqar");
 //		performer1.perform();
 		
-		Performer performer2=(Performer)springContainer.getBean("Nischal");
+		Performer performer2=(Performer)springContainer.getBean("Shafi");
 		
 //		Performer performer3=(Performer)springContainer.getBean("Shafi");
 		

@@ -40,10 +40,17 @@
 		</property>
 	</bean>
 	<bean id="guitar" class="com.sujata.producer.Guitar"></bean>
-	<bean id="Tabla" class="com.sujata.producer.Tabla"></bean>
-	<bean id="Drum" class="com.sujata.producer.Drum"></bean>
+	<bean id="tabla" class="com.sujata.producer.Tabla"></bean>
+	<bean id="drum" class="com.sujata.producer.Drum"></bean>
 	
 	<bean id="Shafi" class="com.sujata.producer.Instrumentalist">
-		<property name="instrument" ref="guitar"></property>
+		<property name="songsInstruments">
+		<map>
+			<entry key="Baby" value-ref="guitar"></entry>
+			<entry key="Alone" value-ref="tabla"></entry>
+			<entry key="Happy Hour" value-ref="drum"></entry>
+			<entry key="Satisfied" value-ref="guitar"></entry>
+		</map>
+		</property>
 	</bean>
 </beans>
