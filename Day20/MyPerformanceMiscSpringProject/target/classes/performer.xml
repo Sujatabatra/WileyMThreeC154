@@ -27,4 +27,10 @@
 		<property name="style" value="Bollywood"></property>
 	</bean>
 	
+	<bean id="empFactory" class="com.sujata.demo.EmployeeFactory"></bean>
+
+	<bean id="salaried" class="com.sujata.demo.SalariedEmployee" factory-bean="empFactory" factory-method="getSalariedEmployee"></bean>
+
+	<bean id="waged" class="com.sujata.demo.WagedEmployee" factory-bean="empFactory" factory-method="getSalariedEmployee"></bean>
+
 </beans>
