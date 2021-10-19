@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--  
+	<bean id="Shalini" class="com.sujata.producer.Singer">
+		<constructor-arg name="song" value="Gadi Wala Aya"></constructor-arg>
+	</bean>
+-->
+
+	<bean id="Waqar" class="com.sujata.producer.Juggler" init-method="customInitForBean1" destroy-method="customDestroyForBean1">
+		<property name="balls" value="20"></property>
+	</bean>
+	
+	<bean id="Vishnu" class="com.sujata.producer.Juggler" init-method="customInitForBean2" destroy-method="customDestroyForBean2">
+		<property name="balls" value="10"></property>
+	</bean>
+	
+	<bean id="commonInit" class="com.sujata.producer.InitProcessForAllPerformances"></bean>
+<!--  
+	<bean id="Chetan" class="com.sujata.producer.Dancer">
+		<constructor-arg name="style" value="Tandav"></constructor-arg>
+	</bean>
+-->
+	<bean id="Shivendra" class="com.sujata.producer.Dancer">
+		<property name="style" value="Bollywood"></property>
+	</bean>
+	
+</beans>
