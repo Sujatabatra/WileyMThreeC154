@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Demonstrating Form Tag</title>
+<link rel="stylesheet" href="demostyle.css">
+</head>
+<body>
+<header>
+	<h2>Enter Employee Details</h2>
+</header>
+<section>
+	<form action="/MyResource" method="post">
+		Enter Employee ID : <input type="text" name="empId"><br><br>
+		Enter Employee Name : <input type="text" name="empName"><br><br>
+		Enter Employee Password : <input type="password"><br><br>
+		Select Gender : <input type="radio" name="gender" value="M">Male
+						<input type="radio" name="gender" value="F">Female<br><br>
+		Choose Hobbies : <input type="checkbox" name="hobbies" value="travel">Travelling
+						<input type="checkbox" name="hobbies" value="read">Reading
+						<input type="checkbox" name="hobbies" value="sing">Singing<br><br>
+		Select Department : <select name="deptt">
+			<option>--Select Department--</option>
+			<option value="Sales">Sales</option>
+			<option value="IT">IT</option>
+			<option value="HR">HR</option>
+			<option value="Marketing">Marketing</option>
+		</select><br><br>
+		Select your favourite Color : <input type="color" name="color"><br><br>
+		Enter date of joining : <input type="date" name="doj"><br><br>
+		<input type="submit" value="Save">
+	</form>
+</section>
+<br><br>
+<nav>
+<a href="./index.html">Go To Main Page</a><br>
+</nav>
+</body>
+</html>
