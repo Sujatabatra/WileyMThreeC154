@@ -1,0 +1,7 @@
+1. add tomcat
+2. create dynamic web project with version 2.5
+3. add servlet and servlet mapping in web.xml
+4. create dispatcherservlet-servlet.xml file
+5. create controller classes
+6. creare jsp files
+Note : to run the application : Right click on the project -> run on server
