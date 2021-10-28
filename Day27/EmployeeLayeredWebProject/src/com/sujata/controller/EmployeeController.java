@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.sujata.bean.Employee;
@@ -19,6 +20,7 @@ import com.sujata.model.service.EmployeeService;
 import com.sujata.model.service.LoginService;
 
 @Controller
+@SessionAttributes({"user"})
 public class EmployeeController {
 
 	@Autowired
@@ -31,11 +33,11 @@ public class EmployeeController {
 		return new ModelAndView("login","command",new User());
 	}
 	@RequestMapping("/loginCheck")
-	public ModelAndView showMenuController(@ModelAttribute("command") User user,HttpSession session) {
+	public ModelAndView showMenuController(@ModelAttribute("command") User user/*,HttpSession session*/) {
 		if(loginService.loginCheck(user)) {
 			ModelAndView mv=new ModelAndView();
 			mv.addObject("user", user);
-			session.setAttribute("user", user);
+//			session.setAttribute("user", user);
 			mv.setViewName("menu");
 			return mv;
 		}
