@@ -8,11 +8,12 @@
 </head>
 <body>
 <h1>Employee Management System</h1>
+<h3 style="color:blue;">Welcome , ${user.userName} !!</h3>
 <form action="./delete" method="post">
 Enter Employee ID to be deleted : <input type="text" name="eId"><br><br>
 <input type="submit" value="Delete">
 </form>
 <br><br>
-<a href="./">Go to main Page</a>
+<a href="./menu">Go to main Page</a>
 </body>
 </html>

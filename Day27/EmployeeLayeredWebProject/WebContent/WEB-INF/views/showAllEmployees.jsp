@@ -11,6 +11,7 @@
 </head>
 <body>
 	<h1>List of Employees</h1>
+	<h3 style="color:blue;">Welcome , ${user.userName} !!</h3>
 	<h2>List using JSTL</h2>
 	<table border="1">
 		<tr>
@@ -61,6 +62,6 @@
 
 	<br>
 	<br>
-	<a href="./">Go to main Page</a>
+	<a href="./menu">Go to main Page</a>
 </body>
 </html>

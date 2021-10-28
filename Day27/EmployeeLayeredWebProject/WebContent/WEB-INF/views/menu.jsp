@@ -8,6 +8,7 @@
 </head>
 <body>
 <h1>Employee Management System</h1>
+<h3 style="color:blue;">Welcome , ${user.userName} !!</h3>
 <a href="./insertEmpPage">Insert Employee</a><br><br>
 <a href="./getAllEmps">List All Employees</a><br><br>
 <a href="./searchEmpPage">Search Employee</a><br><br>

@@ -9,12 +9,13 @@
 </head>
 <body>
 <h1>Employee Management System</h1>
+<h3 style="color:blue;">Welcome , ${user.userName} !!</h3>
 <spring:form action="./updateSalary" method="post">
 	Enter Employee ID : <spring:input path="empId"/><br><br>
 	Enter Employee New Salary : <spring:input path="empSalary"/><br><br>
 	<input type="submit" value="Update">
 </spring:form>
 <br><br>
-<a href="./">Go to main Page</a>
+<a href="./menu">Go to main Page</a>
 </body>
 </html>

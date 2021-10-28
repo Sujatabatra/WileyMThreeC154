@@ -11,6 +11,7 @@
 <body>
 
 	<h1>Employee Details</h1>
+	<h3 style="color:blue;">Welcome , ${user.userName} !!</h3>
 	<c:if test="${not empty emp}">
 		<%
 		//Employee emp=(Employee)request.getAttribute("emp");
@@ -46,6 +47,6 @@
 	%>
 	<br>
 	<br>
-	<a href="./">Go to main Page</a>
+	<a href="./menu">Go to main Page</a>
 </body>
 </html>

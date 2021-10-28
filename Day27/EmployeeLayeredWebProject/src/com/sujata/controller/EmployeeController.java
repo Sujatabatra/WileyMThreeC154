@@ -2,6 +2,8 @@ package com.sujata.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Controller;
@@ -12,16 +14,36 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.sujata.bean.Employee;
 import com.sujata.bean.EmployeePayslip;
+import com.sujata.bean.User;
 import com.sujata.model.service.EmployeeService;
+import com.sujata.model.service.LoginService;
 
 @Controller
 public class EmployeeController {
 
 	@Autowired
 	private EmployeeService employeeService;
+	@Autowired
+	private LoginService loginService;
 	
 	@RequestMapping("/")
-	public ModelAndView showMenuController() {
+	public ModelAndView showLoginPage() {
+		return new ModelAndView("login","command",new User());
+	}
+	@RequestMapping("/loginCheck")
+	public ModelAndView showMenuController(@ModelAttribute("command") User user,HttpSession session) {
+		if(loginService.loginCheck(user)) {
+			ModelAndView mv=new ModelAndView();
+			mv.addObject("user", user);
+			session.setAttribute("user", user);
+			mv.setViewName("menu");
+			return mv;
+		}
+		return new ModelAndView("login", "message", "Login Failed");
+	}
+	
+	@RequestMapping("/menu")
+	public ModelAndView showMenu() {
 		return new ModelAndView("menu");
 	}
 	
