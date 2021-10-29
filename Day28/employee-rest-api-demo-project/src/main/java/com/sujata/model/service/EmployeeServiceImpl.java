@@ -36,14 +36,20 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public boolean deleteEmployee(int empId){
-		
-		return employeeDao.deleteData(empId);
+	public Employee deleteEmployee(int empId){
+		Employee employee=employeeDao.searchRecord(empId);
+		if(employeeDao.deleteData(empId))
+			return employee;
+		return null;
 	}
 
 	@Override
-	public boolean updateSalary(int empId, int salary){
-		return employeeDao.updateSalary(empId, salary);
+	public Employee updateSalary(int empId, int salary){
+		boolean status=employeeDao.updateSalary(empId, salary);
+		Employee employee=employeeDao.searchRecord(empId);
+		if(status)
+			return employee;
+		return null;
 	}
 
 	@Override

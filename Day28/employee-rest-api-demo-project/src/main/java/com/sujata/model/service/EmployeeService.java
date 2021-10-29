@@ -10,8 +10,8 @@ public interface EmployeeService {
 
 	ArrayList<Employee> getAllEmployees();
 	Employee insertEmployee(Employee employee);
-	boolean deleteEmployee(int empId);
-	boolean updateSalary(int empId,int salary);
+	Employee deleteEmployee(int empId);
+	Employee updateSalary(int empId,int salary);
 	Employee searchEmployee(int empId);
 	EmployeePayslip paySlip(int empId);
 }
