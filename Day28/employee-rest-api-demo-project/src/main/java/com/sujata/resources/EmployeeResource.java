@@ -3,7 +3,9 @@ package com.sujata.resources;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -35,8 +37,9 @@ public class EmployeeResource {
 	}
 	
 	@PostMapping(path = "/employees",produces = MediaType.APPLICATION_JSON_VALUE,consumes = MediaType.APPLICATION_JSON_VALUE)
-	public Employee insertEmployeeResource(@RequestBody Employee employee) {
-		return employeeService.insertEmployee(employee);
+	public ResponseEntity<Employee> insertEmployeeResource(@RequestBody Employee employee) {
+		Employee empl=employeeService.insertEmployee(employee);
+		return new ResponseEntity<Employee>(empl, HttpStatus.CREATED);
 	}
 	
 	@DeleteMapping(path="/employees/{eid}",produces = MediaType.APPLICATION_JSON_VALUE)
