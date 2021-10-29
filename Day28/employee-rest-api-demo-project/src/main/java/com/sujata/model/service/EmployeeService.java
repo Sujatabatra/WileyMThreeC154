@@ -9,7 +9,7 @@ import com.sujata.bean.EmployeePayslip;
 public interface EmployeeService {
 
 	ArrayList<Employee> getAllEmployees();
-	boolean insertEmployee(Employee employee);
+	Employee insertEmployee(Employee employee);
 	boolean deleteEmployee(int empId);
 	boolean updateSalary(int empId,int salary);
 	Employee searchEmployee(int empId);

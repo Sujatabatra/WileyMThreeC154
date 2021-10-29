@@ -29,9 +29,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public boolean insertEmployee(Employee employee){
-		
-		return employeeDao.insertData(employee);
+	public Employee insertEmployee(Employee employee){
+		if(employeeDao.insertData(employee))
+			return employee;
+		return null;
 	}
 
 	@Override
