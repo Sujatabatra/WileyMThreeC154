@@ -8,7 +8,7 @@
 <h1>Employee Details Using Thymeleaf</h1>
 	<h3 style="color:blue;" th:text="'Welcome , '+${user.userName} +'!!'"></h3>
 	
-		<table border="1">
+		<table border="1" th:if="${emp != null}">
 			<tr>
 				<th>Employee ID</th>
 				<th>Name</th>
@@ -27,7 +27,8 @@
 		
 		<br>
 	<br>
-	<h2> Employee Does not exist</h2>
+	<h2 th:if="${emp == null}"> Employee Does not exist</h2>
+
 	<a href="./menu">Go to main Page</a>
 	</body>
 </html>
