@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee Management System</title>
+<link rel="stylesheet" href="/css/mystyle.css">
+</head>
+<body>
+<h1>Employee Management system Using Thymeleaf</h1>
+
+<form action="#" th:action="@{./loginCheck}" method="post" th:object="${command}">
+	Enter Username : <input type="text" th:field="*{userName}"/><br><br>
+	Enter password : <input type="password" th:field="*{password}"/><br><br>
+	<input type="submit" value="Login">
+</form>
+<br><br>
+<h2 th:text="${message }"></h2>
+
+
+</body>
+</html>

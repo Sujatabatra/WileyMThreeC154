@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee Input Form</title>
+</head>
+<body>
+<h1>Enter Employee Details Using Thymeleaf</h1>
+<h3 style="color:blue;" th:text="'Welcome , '+ ${user.userName} +'!!'"></h3>
+
+<form action="#" th:action="@{./insertEmp}" method="post" th:object="${command}">
+Enter Employee Id: <input type="text" th:field="*{empId}"/><br><br>
+Enter Employee Name : <input type="text" th:field="*{empName}"/><br><br>
+Enter Employee Department : <select th:field="*{empDepartment}">
+<option value="IT">IT</option>
+<option value="Sales">Sales</option>
+<option value="Purchase">Purchase</option>
+</select><br><br>
+Enter Employee Designation : <input type="text" th:field="*{empDesignation}"/><br><br>
+Enter Employee Salary : <input type="text" th:field="*{empSalary}"/><br><br>
+<input type="submit" value="Save">
+</form>
+
+</body>
+</html>

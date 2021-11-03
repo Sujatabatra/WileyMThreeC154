@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Employee PaySlip using Thymelead</h1>
+<h3 style="color:blue;" th:text="'Welcome ,'+ ${user.userName}+' !!'"></h3>
+<table border="1">
+	<tr>
+		<th>Employee ID</th>
+		<th>Name</th>
+		<th>Designation</th>
+		<th>Department</th>
+		<th>Salary</th>
+		<th>HRA</th>
+		<th>DA</th>
+		<th>PF</th>
+		<th>Total Salary</th>
+	</tr>
+	<tr>
+		<td th:text="${payslip.employee.empId }"></td>
+		<td th:text="${payslip.employee.empName }"></td>
+		<td th:text="${payslip.employee.empDesignation }"></td>
+		<td th:text="${payslip.employee.empDepartment }"></td>
+		<td th:text="${payslip.employee.empSalary }"></td>
+		<td th:text="${payslip.hra }"></td>
+		<td th:text="${payslip.da }"></td>
+		<td th:text="${payslip.pf }"></td>
+		<td th:text="${payslip.totalSalary }"></td>
+	</tr>
+</table>
+<br><br>
+<a href="./menu">Go to main Page</a>
+</body>
+</html>
